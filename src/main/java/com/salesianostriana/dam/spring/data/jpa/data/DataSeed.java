@@ -32,15 +32,15 @@ public class DataSeed {
             Genero g1 = generoRepository.save(Genero.builder().nombre("Accion").build());
             Genero g2 = generoRepository.save(Genero.builder().nombre("Drama").build());
 
-            Pelicula p1 = Pelicula.builder().titulo("Pelicula 1").anioEstreno(2020).build();
+            Pelicula p1 = Pelicula.builder().titulo("Los vengadores").anioEstreno(2012).build();
             p1.addGenero(g1);
             p1.addGenero(g2);
-            p1.addCritica(Critica.builder().autor("Autor 1").texto("Critica 1").puntuacion(8).build());
-            p1.addCritica(Critica.builder().autor("Autor 2").texto("Critica 2").puntuacion(6).build());
+            p1.addCritica(Critica.builder().autor("Angel Naranjo").texto("Muy buena pelicula muy recomendada").puntuacion(8).build());
+            p1.addCritica(Critica.builder().autor("Luis Miguel Lopez").texto("Falta un poco de java pero igualmente bastante recomendada").puntuacion(6).build());
 
-            Pelicula p2 = Pelicula.builder().titulo("Pelicula 2").anioEstreno(2021).build();
+            Pelicula p2 = Pelicula.builder().titulo("El laberinto del fauno").anioEstreno(2021).build();
             p2.addGenero(g2);
-            p2.addCritica(Critica.builder().autor("Autor 3").texto("Critica 3").puntuacion(7).build());
+            p2.addCritica(Critica.builder().autor("Jesus Casanova").texto("Demasiado dialogo creado con IA generativa").puntuacion(7).build());
 
             peliculaRepository.save(p1);
             peliculaRepository.save(p2);

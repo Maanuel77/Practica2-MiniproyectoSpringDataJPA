@@ -37,7 +37,7 @@ public class DataCheck {
     public void comprobarDatos() {
 
         transactionTemplate.executeWithoutResult(status -> {
-            System.out.println("===== Comprobación A =====");
+            System.out.println("Comprobación A");
             List<Pelicula> peliculas = peliculaRepository.findAll();
             peliculas.forEach(p -> System.out.println("Película: " + p.getTitulo()));
 
@@ -45,17 +45,15 @@ public class DataCheck {
             Pelicula primera = peliculaRepository.findById(primeraId).orElseThrow();
             System.out.println("Título: " + primera.getTitulo());
 
-            System.out.println("--- Accediendo a las críticas (LAZY) ---");
             for (Critica c : primera.getCriticas()) {
                 System.out.println("  Crítica: " + c.getTexto());
             }
 
-            System.out.println("--- Accediendo a los géneros (LAZY) ---");
             for (Genero g : primera.getGeneros()) {
                 System.out.println("  Género: " + g.getNombre());
             }
 
-            System.out.println("===== Comprobación B =====");
+            System.out.println("COMPROBACION B");
             System.out.println("Antes -> críticas: " + criticaRepository.count()
                     + ", géneros: " + generoRepository.count());
 
